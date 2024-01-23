@@ -80,27 +80,27 @@ declare namespace _ {
     }
 
     export interface SelfJoin extends Function {
-        <TLeft, TValueOf>(
+        <TLeft, TValueOf extends Object>(
             left: TLeft[],
             leftAccessor: IAccessor<TLeft, TValueOf>
         ): TLeft[];
     }
 
     export interface IOuterJoin extends SelfJoin {
-        <TLeft, TRight, TValueOf>(
+        <TLeft, TRight, TValueOf extends Object>(
             left: TLeft[],
             accessor: IAccessor<TLeft | TRight, TValueOf>,
             right: TRight[]
         ): (TLeft | TRight | TLeft & TRight)[];
 
-        <TLeft, TRight, TValueOf>(
+        <TLeft, TRight, TValueOf extends Object>(
             left: TLeft[],
             leftAccessor: IAccessor<TLeft, TValueOf>,
             right: TRight[],
             rightAccessor: IAccessor<TRight, TValueOf>
         ): (TLeft | TRight | TLeft & TRight)[];
 
-        <TLeft, TRight, TValueOf, TMergeResult>(
+        <TLeft, TRight, TValueOf extends Object, TMergeResult>(
             left: TLeft[],
             leftAccessor: IAccessor<TLeft, TValueOf>,
             right: TRight[],
@@ -110,20 +110,20 @@ declare namespace _ {
     }
 
     export interface IInnerJoin extends SelfJoin {
-        <TLeft, TRight, TValueOf>(
+        <TLeft, TRight, TValueOf extends Object>(
             left: TLeft[],
             accessor: IAccessor<TLeft | TRight, TValueOf>,
             right: TRight[]
         ): (TLeft & TRight)[];
 
-        <TLeft, TRight, TValueOf>(
+        <TLeft, TRight, TValueOf extends Object>(
             left: TLeft[],
             leftAccessor: IAccessor<TLeft, TValueOf>,
             right: TRight[],
             rightAccessor: IAccessor<TRight, TValueOf>
         ): (TLeft & TRight)[];
 
-        <TLeft, TRight, TValueOf, TMergeResult>(
+        <TLeft, TRight, TValueOf extends Object, TMergeResult>(
             left: TLeft[],
             leftAccessor: IAccessor<TLeft, TValueOf>,
             right: TRight[],
@@ -133,20 +133,20 @@ declare namespace _ {
     }
 
     export interface IMergeLeftJoin extends SelfJoin {
-        <TLeft, TRight, TValueOf>(
+        <TLeft, TRight, TValueOf extends Object>(
             left: TLeft[],
             accessor: IAccessor<TLeft | TRight, TValueOf>,
             right: TRight[]
         ): (TLeft | TLeft & TRight)[];
 
-        <TLeft, TRight, TValueOf>(
+        <TLeft, TRight, TValueOf extends Object>(
             left: TLeft[],
             leftAccessor: IAccessor<TLeft, TValueOf>,
             right: TRight[],
             rightAccessor: IAccessor<TRight, TValueOf>
         ): (TLeft | TLeft & TRight)[];
 
-        <TLeft, TRight, TValueOf, TMergeResult>(
+        <TLeft, TRight, TValueOf extends Object, TMergeResult>(
             left: TLeft[],
             leftAccessor: IAccessor<TLeft, TValueOf>,
             right: TRight[],
@@ -156,20 +156,20 @@ declare namespace _ {
     }
 
     export interface IMergeRightJoin extends SelfJoin {
-        <TLeft, TRight, TValueOf>(
+        <TLeft, TRight, TValueOf extends Object>(
             left: TLeft[],
             accessor: IAccessor<TLeft | TRight, TValueOf>,
             right: TRight[]
         ): (TRight | TLeft & TRight)[];
 
-        <TLeft, TRight, TValueOf>(
+        <TLeft, TRight, TValueOf extends Object>(
             left: TLeft[],
             leftAccessor: IAccessor<TLeft, TValueOf>,
             right: TRight[],
             rightAccessor: IAccessor<TRight, TValueOf>
         ): (TRight | TLeft & TRight)[];
 
-        <TLeft, TRight, TValueOf, TMergeResult>(
+        <TLeft, TRight, TValueOf extends Object, TMergeResult>(
             left: TLeft[],
             leftAccessor: IAccessor<TLeft, TValueOf>,
             right: TRight[],
@@ -179,13 +179,13 @@ declare namespace _ {
     }
 
     export interface INonMergeLeftJoin extends SelfJoin {
-        <TLeft, TRight, TValueOf>(
+        <TLeft, TRight, TValueOf extends Object>(
             left: TLeft[],
             accessor: IAccessor<TLeft | TRight, TValueOf>,
             right: TRight[]
         ): TLeft[];
 
-        <TLeft, TRight, TValueOf>(
+        <TLeft, TRight, TValueOf extends Object>(
             left: TLeft[],
             leftAccessor: IAccessor<TLeft, TValueOf>,
             right: TRight[],
@@ -194,13 +194,13 @@ declare namespace _ {
     }
 
     export interface INonMergeRightJoin extends SelfJoin {
-        <TLeft, TRight, TValueOf>(
+        <TLeft, TRight, TValueOf extends Object>(
             left: TLeft[],
             accessor: IAccessor<TLeft | TRight, TValueOf>,
             right: TRight[]
         ): TRight[];
 
-        <TLeft, TRight, TValueOf>(
+        <TLeft, TRight, TValueOf extends Object>(
             left: TLeft[],
             leftAccessor: IAccessor<TLeft, TValueOf>,
             right: TRight[],
